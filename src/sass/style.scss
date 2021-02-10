@@ -2,7 +2,10 @@
 @import './utilities/media-queries';
 
 @import './base/base';
+@import './base/reset';
 
 @import './layout/l-container';
+
+@import './components/landing';
 
 @import './utilities/utility';
