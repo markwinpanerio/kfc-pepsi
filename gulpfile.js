@@ -10,6 +10,8 @@ const webpack = require('webpack-stream');
 const babel = require('gulp-babel');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const ejs = require('gulp-ejs');
+var log = require('fancy-log');
 
 compileSass.compiler = require('node-sass');
 
@@ -35,6 +37,11 @@ const copyDependencies = () => {
     .pipe(dest('public/dependecies'));
 }
 
+const copyPages = () => {
+  return src('src/pages/**/*')
+    .pipe(dest('public'));
+}
+
 const js = () => {
   return src('src/js/**/*.js')
     .pipe(babel({
@@ -56,19 +63,28 @@ const css = () => {
     .pipe(dest('./public/css'))
 }
 
+const html = () => {
+  return src('./src/*.ejs')
+    .pipe(ejs({
+      msg: 'Hello Gulp!'
+    }, { ext: '.html' }))
+    .pipe(dest('./public'))
+}
+
 const watchForChanges = () => {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: './public'
     }
   });
 
   watch('src/sass/**/*.scss', css);
   watch('src/**/*.js', js);
+  watch('src/pages/**/*', copyPages);
   watch('**/*.html').on('change', browserSync.reload);
   watch('src/images/**/*.{png,jpg,jpeg,gif,svg}', series(cleanImages, copyImages));
   watch('src/dependencies/**/*', series(cleanDependecies, copyDependencies));
 }
 
-exports.default = series(clean, parallel(css, js, copyImages, copyDependencies), watchForChanges);
-exports.build = series(clean, parallel(css, js, copyImages, copyDependencies));
+exports.default = series(clean, parallel(css, js, copyPages, copyImages, copyDependencies), watchForChanges);
+exports.build = series(clean, parallel(css, js, copyPages, copyImages, copyDependencies));
