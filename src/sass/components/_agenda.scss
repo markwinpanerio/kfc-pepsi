@@ -1,0 +1,214 @@
+.agenda {
+    color: $color-white;
+    padding-bottom: 20px;
+
+    @include max-screen($breakpoint-mobile) {
+        padding-bottom: 0;
+    }
+
+    &-upper,
+    p {
+        color: $color-white-dark;
+
+        span {
+            color: $color-primary-dark;
+        }
+    }
+
+    &-upper {
+        font: {
+            family: Lato;
+            style: normal;
+            weight: normal;
+            size: 18px;
+        }
+        line-height: 130%;
+        text-transform: uppercase;
+        color: $color-primary-dark;
+
+        @include max-screen($breakpoint-mobile) {
+            font-size: 18px;
+            line-height: 130%;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    &-title {
+        font: {
+            family: $font-lato;
+            style: normal;
+            weight: bold;
+            size: 30px;
+        }
+        line-height: 130%;
+        text-transform: uppercase;
+
+        @include max-screen($breakpoint-mobile) {
+            font-size: 25px;
+            text-align: center;
+        }
+    }
+
+    &-sub-title {
+        margin-top: 32px;
+        font: {
+            family: Lato;
+            style: normal;
+            weight: bold;
+            size: 18px;
+        }
+        line-height: 130%;
+
+        text-transform: uppercase;
+
+        @include max-screen($breakpoint-mobile) {
+            text-align: center;
+        }
+    }
+
+    &-message {
+        display: flex;
+        align-items: center;
+        margin: 20px 0 0;
+        
+        &-icon {
+            width: 33px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-content {
+            width: calc(100% - 33px);
+            padding-left: 20px;
+            font: {
+                family: $font-lato;
+                style: normal;
+                weight: normal;
+                size: 16px;
+            }
+            line-height: 19px;
+            margin-bottom: 0;
+
+            @include max-screen($breakpoint-mobile) {
+                font-size: 16px;
+                padding-left: 10px;
+            }
+        }
+    }
+    
+    &-list {
+        padding: 0;
+        margin: 0;
+        margin-top: 16px;
+        list-style-type: none;
+
+        @include max-screen($breakpoint-mobile) {
+            text-align: center;
+        }
+    }
+
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: 14px;
+
+            @include max-screen($breakpoint-mobile) {
+                margin-bottom: 19px;
+            }
+        }
+    }
+
+    &-item-description {
+        font: {
+            family: $font-lato;
+            style: normal;
+            weight: normal;
+            size: 16px;
+        }
+        line-height: 160%;
+        color: $color-primary-dark;
+        margin-bottom: 0;
+
+        @include max-screen($breakpoint-mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &-item-date {
+        display: flex;
+        align-items: flex-start;
+        font: {
+            family: $font-lato;
+            style: normal;
+            weight: bold;
+            size: 20px;
+        }
+        line-height: 160%;
+        color: $color-primary-dark;
+        padding-right: 0;
+        margin-bottom: 4px;
+
+        @include max-screen($breakpoint-mobile) {
+            font-size: 20px;
+            color: $color-primary;
+        }
+
+        @include min-screen($breakpoint-mobile) {
+            span:first-child {
+                display: none;
+                padding-right: 20px;
+            }
+
+            span:nth-child(2) {
+                padding-right: 20px;
+            }
+    
+            span:last-child {
+                width: 100%;
+                min-height: 32px;
+                flex: 1;
+                position: relative;
+                display: flex;
+                align-items: center;
+    
+                &:before {
+                    content: "";
+                    display: block; 
+                    width: 100%;
+                    height: 1px;
+                    background-color: $color-primary-dark; 
+                }
+            }
+        }
+
+        @include max-screen($breakpoint-mobile) {
+            span:first-child {
+                display: block;
+            }
+
+            span:nth-child(2) {
+                padding: 0 15px;
+            }
+
+            span:first-child,
+            span:last-child {
+                width: 100%;
+                min-height: 32px;
+                flex: 1;
+                position: relative;
+                display: flex;
+                align-items: center;
+    
+                &:before {
+                    content: "";
+                    display: block; 
+                    width: 100%;
+                    height: 1px;
+                    background-color: $color-primary-dark; 
+                }
+            }
+        }
+    }
+}
