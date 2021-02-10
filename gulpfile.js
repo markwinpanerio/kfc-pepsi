@@ -16,30 +16,30 @@ var log = require('fancy-log');
 compileSass.compiler = require('node-sass');
 
 const clean = () => {
-  return del(['public']);
+  return del(['docs']);
 }
 
 const cleanImages = () => {
-  return del(['public/images']);
+  return del(['docs/images']);
 }
 
 const cleanDependecies = () => {
-  return del(['public/dependencies']);
+  return del(['docs/dependencies']);
 }
 
 const copyImages = () => {
   return src('src/images/**/*.{jpg,jpeg,png,gif,svg}')
-    .pipe(dest('public/images'));
+    .pipe(dest('docs/images'));
 }
 
 const copyDependencies = () => {
   return src('src/dependecies/**/*')
-    .pipe(dest('public/dependecies'));
+    .pipe(dest('docs/dependecies'));
 }
 
 const copyPages = () => {
   return src('src/pages/**/*')
-    .pipe(dest('public'));
+    .pipe(dest('docs'));
 }
 
 const js = () => {
@@ -47,7 +47,7 @@ const js = () => {
     .pipe(babel({
       presets: ["@babel/env"]
     }))
-    .pipe(dest('./public/js'))
+    .pipe(dest('./docs/js'))
     .pipe(mode.development( browserSync.stream() ));
 }
 
@@ -60,7 +60,7 @@ const css = () => {
     .pipe(mode.production( csso() ))
     .pipe(minifyCss())
     .pipe(sourcemaps.write())
-    .pipe(dest('./public/css'))
+    .pipe(dest('./docs/css'))
 }
 
 const html = () => {
@@ -68,13 +68,13 @@ const html = () => {
     .pipe(ejs({
       msg: 'Hello Gulp!'
     }, { ext: '.html' }))
-    .pipe(dest('./public'))
+    .pipe(dest('./docs'))
 }
 
 const watchForChanges = () => {
   browserSync.init({
     server: {
-      baseDir: './public'
+      baseDir: './docs'
     }
   });
 

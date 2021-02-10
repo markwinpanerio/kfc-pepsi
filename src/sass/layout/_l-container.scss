@@ -3,41 +3,4 @@
     max-width: $site-size;
     width: 100%;
     margin: 0 auto;
-
-    &-content {
-        max-width: 660px;
-        min-width: 660px;
-        padding: 40px 40px 20px;
-        background-color: rgba($color-black, 0.5);
-
-        @include max-screen($breakpoint-tablet) {
-            width: 100%;
-            max-width: 100%;
-            min-width: 100%;
-            padding: 22px;
-        }
-    }
-
-    &-intro {
-        max-width: 692px;
-        min-width: 692px;
-
-        @include max-screen($breakpoint-tablet) {
-            width: 100%;
-            max-width: 100%;
-            min-width: 100%;
-            padding: 0;
-        }
-    }
-    
-    @include max-screen($breakpoint-tablet) {
-        width: 100%;
-        padding: 0 40px;
-    }
-
-    @include max-screen($breakpoint-mobile) {
-        width: 100%;
-        padding: 0 15px;
-        margin-top: 0;
-    }
 }
