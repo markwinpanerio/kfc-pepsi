@@ -3,4 +3,8 @@
     max-width: $mobile-max-width + 70;
     width: 100%;
     margin: 0 auto;
+
+    @include max-screen($mobile-max-width) {
+        padding: 0 20px;
+    }
 }

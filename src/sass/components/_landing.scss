@@ -1,8 +1,22 @@
 .landing {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    background: {
+        image: url('../images/background/bg-web.png');
+        position: center;
+        size: cover;
+    }
+
+    @include max-screen(990px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
     
-    @include min-screen($breakpoint-mobile) {
-        padding: 60px 0;
+    @include min-screen(990px) {
+        padding: 30px 0;
+        height: 100vh;
     }
 
     &-inner {
@@ -12,8 +26,8 @@
         
         background: {
             image: url('../images/background/mobile-bg.png');
-            position: center;
-            size: 107%;
+            position: 50% -12px;
+            size: 107% 107%;
         }
 
         @include min-screen($breakpoint-mobile) {
@@ -36,10 +50,23 @@
         line-height: 1.4;
         letter-spacing: 1.18px;
         margin-top: 20px;
+
+        @include max-screen($mobile-max-width - 1) {
+            font-size: 20px;
+            margin-top: 10px;
+        }
     }
 
     &-score {
         margin: 20px 0;
+
+        @include max-screen($mobile-max-width - 1) {
+            margin: 10px 0;
+        }
+
+        @include min-screen($mobile-max-width - 1) {
+            margin: 15px 0;
+        }
 
         img {
             width: 268px;
@@ -54,8 +81,22 @@
             align-items: center;
             color: $color-white;
 
+            &:not(:last-child) {
+                @include min-screen($mobile-max-width - 1) {
+                    margin-bottom: -10px;
+                }
+
+                @include max-screen($mobile-max-width - 1) {
+                    margin-bottom: 10px;
+                }
+            }
+
             img {
                 width: 60px;
+
+                @include max-screen($mobile-max-width - 1) {
+                    width: 40px;
+                }
             }
 
             span {
@@ -70,11 +111,22 @@
                 position: relative;
                 top: -3px;
 
+                @include max-screen($mobile-max-width - 1) {
+                    font-size: 14px;
+                    padding-left: 5px;
+                    display: block;
+                }
+
                 i {
                     font-size: 24px;
                     display: inline-block;
                     vertical-align: middle;
                     margin: 0 10px;
+
+                    @include max-screen($mobile-max-width - 1) {
+                        font-size: 18px;
+                        margin: 0 5px;
+                    }
                 }
             }
         }
