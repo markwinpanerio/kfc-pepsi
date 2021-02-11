@@ -1,0 +1,119 @@
+.landing {
+    height: 100vh;
+    
+    @include min-screen($breakpoint-mobile) {
+        padding: 60px 0;
+    }
+
+    &-inner {
+        height: 100%;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        
+        background: {
+            image: url('../images/background/mobile-bg.png');
+            position: center;
+            size: 107%;
+        }
+
+        @include min-screen($breakpoint-mobile) {
+            background-size: cover;
+        }
+    }
+
+    &-logo {
+        img {
+            width: 178px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &-description {
+        color: $color-white;
+        text-align: center;
+        font-size: 24px; 
+        line-height: 1.4;
+        letter-spacing: 1.18px;
+        margin-top: 20px;
+    }
+
+    &-score {
+        margin: 20px 0;
+
+        img {
+            width: 268px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &-steps {
+        &-item {
+            display: flex;
+            align-items: center;
+            color: $color-white;
+
+            img {
+                width: 60px;
+            }
+
+            span {
+                font-family: $font-montserrat;
+                letter-spacing: 0.78px;
+                display: block;
+                width: calc(100% - 40px);
+                padding-left: 15px;
+                text-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+                display: flex;
+                align-items: center;
+                position: relative;
+                top: -3px;
+
+                i {
+                    font-size: 24px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    &-note {
+        font-family: $font-montserrat;
+        color: $color-white;
+        font-size: 12px;
+        line-height: 24px;
+        letter-spacing: 0.59px;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    &-button {
+        width: 100%;
+        display: block;
+        text-align: center;
+
+        a {
+            display: inline-block;
+        }
+
+        img {
+            width: 230px;
+            filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.8));
+        }
+    }
+
+    &-terms {
+        font-size: 12px;
+        font-family: $font-montserrat;
+        color: $color-white;
+        letter-spacing: 0.59px;
+        line-height: 24px;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+}
