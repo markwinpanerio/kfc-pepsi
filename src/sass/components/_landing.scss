@@ -33,6 +33,15 @@
         @include min-screen($breakpoint-mobile) {
             background-size: cover;
         }
+
+        //modifier
+        .landing-ingame & {
+            background: {
+                image: url('../images/background/mobile-bg-game.png');
+                position: 50% -12px;
+                size: 106%;
+            }
+        }
     }
 
     &-logo {
