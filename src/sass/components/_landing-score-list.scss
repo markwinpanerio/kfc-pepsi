@@ -1,0 +1,41 @@
+.landing-score-list {
+    .landing-inner {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background: {
+            image: url('../images/background/mobile-bg.png');
+            position: center;
+            size: cover;
+        }
+
+        @include max-screen(414px) {
+            padding-top: 15px;
+        }
+
+        @include min-screen(990px) {
+            background-position: top;
+            padding-top: 36px;
+        }
+    }
+
+    &-container {
+        font: {
+            family: $font-anton;
+            size: 64px;
+        }
+        letter-spacing: 3.14px;
+        color: #01EEFF;
+        text-shadow: 0px 5px 10px rgba(0,0,0, 0.8);
+        text-align: center;
+        
+        span {
+            background: {
+                image: url('../images/background/mobile-bg.png');
+                position: center;
+                size: cover;
+            }
+            display: inline-block;
+            padding: 10px 80px;
+        }
+    }
+}
