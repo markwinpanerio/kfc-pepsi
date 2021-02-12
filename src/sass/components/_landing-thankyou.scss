@@ -1,0 +1,36 @@
+.landing-thankyou {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: {
+        image: url('../images/background/mobile-bg.png');
+        position: center;
+        size: cover;
+    }
+    position: relative;
+
+    @include max-screen(990px) {
+        padding: 0;
+    }
+
+    .landing-inner {
+        height: 100%;
+        position: relative;
+    }
+
+    &-container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+
+        img {
+            width: 75%;
+            max-width: 466px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

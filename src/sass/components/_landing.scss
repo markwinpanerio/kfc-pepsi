@@ -168,4 +168,17 @@
         text-decoration: none;
         margin-top: 10px;
     }
+
+    &-terms {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        text-align: center;
+        width: 100%;
+
+        a {
+            text-decoration: none;
+            color: $color-white;
+        }
+    }
 }
