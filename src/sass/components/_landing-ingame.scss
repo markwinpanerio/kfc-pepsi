@@ -9,6 +9,12 @@
             position: center;
             size: cover;
         }
+        min-height: 100vh;
+        position: relative;
+
+        @include min-screen(990px) {
+            min-height: calc(100vh - 50px);
+        }
 
         @include max-screen(414px) {
             padding-top: 15px;
@@ -25,6 +31,17 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        background: {
+            image: url('../images/background/mobile-bg-game-header.png');
+            position: center;
+            size: cover;
+        }
+        border-bottom: 5px solid #004aad;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        padding: 20px 15px 15px;
     }
 
     &-score {
@@ -115,6 +132,10 @@
             width: 100%;
             overflow: hidden;
 
+            @include max-screen(375px) {
+                padding: 0 20px;
+            }
+
             img {
                 position: relative;
                 transform: translateY(-100%);
@@ -127,6 +148,10 @@
         .start img,
         .ready img {
             width: 272px;
+
+            @include max-screen(375px) {
+                width: 80%;
+            }
         }
 
         .number img {
@@ -139,10 +164,18 @@
 
         .timesup img {
             width: 385px;
+
+            @include max-screen(375px) {
+                width: 100%;
+            }
         }
 
         .goodjob img {
             width: 389px;
+
+            @include max-screen(375px) {
+                width: 100%;
+            }
         }
     }
 

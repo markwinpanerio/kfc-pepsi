@@ -72,6 +72,10 @@
             width: 268px;
             display: block;
             margin: 0 auto;
+
+            @include min-screen(990px) {
+                width: 25vh;
+            }
         }
     }
 

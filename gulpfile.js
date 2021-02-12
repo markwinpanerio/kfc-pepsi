@@ -33,8 +33,8 @@ const copyImages = () => {
 }
 
 const copyDependencies = () => {
-  return src('src/dependecies/**/*')
-    .pipe(dest('docs/dependecies'));
+  return src('src/dependencies/**/*')
+    .pipe(dest('docs/dependencies'));
 }
 
 const copyPages = () => {

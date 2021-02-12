@@ -13,8 +13,12 @@
     }
 
     .landing-inner {
-        height: 100%;
+        min-height: 100vh;
         position: relative;
+
+        @include min-screen(990px) {
+            min-height: calc(100vh - 50px);
+        }
     }
 
     &-container {
