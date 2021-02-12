@@ -1,5 +1,9 @@
 .landing-ingame {
     position: relative;
+
+    @include min-screen(990px) {
+        padding: 10px 0;
+    }
     
     .landing-inner {
         padding-top: 25px;
@@ -41,7 +45,7 @@
         width: 100%;
         left: 0;
         top: 0;
-        padding: 20px 15px 15px;
+        padding: 15px;
     }
 
     &-score {
