@@ -30,12 +30,137 @@
         
         span {
             background: {
-                image: url('../images/background/mobile-bg.png');
+                image: url('../images/text-image/text-outline.png');
                 position: center;
                 size: cover;
             }
             display: inline-block;
-            padding: 10px 80px;
+            padding: 23px 90px 0px;
+        }
+    }
+
+    &-player {
+        background: {
+            image: url('../images/text-image/text-score-list.png');
+            position: top;
+            size: cover;
+        }
+        margin-top: 20px;
+        padding: 80px 50px 12px;
+        min-height: 400px;
+    }
+
+    &-player-item {
+        background: {
+            image: url('../images/scorebar.png');
+            position: center;
+            size: cover;
+        }
+        border-radius: 5px;
+        color: $color-white;
+        padding: 6px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        > span {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0px 5px 10px rgba(0,0,0, 0.8);
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        > p {
+            width: calc(100% - 30px);
+            padding-left: 10px;
+            text-shadow: 0px 5px 10px #000000CC;
+            text-transform: uppercase;
+            font-family: 21px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: 1.03px;
+        }
+    }
+
+    &-form {
+        color: $color-white;
+
+        p {
+            font-size: 24px;
+            letter-spacing: 1.18px;
+            text-shadow: 0px 5px 10px rgba(0,0,0, 0.5);
+            text-align: center;
+        }
+
+        form {
+            max-width: 414px;
+            margin: 15px auto 0;
+            text-align: center;
+
+            ul {
+                text-align: left;
+
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            label {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 10px 10px;
+                border-radius: 10px;
+                color: #000;
+                background-color: $color-white;
+                font-size: 18px;
+                letter-spacing: 0.88px;
+            }
+
+            input,
+            button {
+                background-color: transparent;
+                border: 0;
+                box-shadow: 0;
+                color: #000;
+            }
+
+            button {
+                display: block;
+                text-align: center;
+                margin: 15px auto -10px;
+
+                img {
+                    max-width: 235px;
+                }
+            }
+
+            a {
+                letter-spacing: 0.59px;
+                color: #FFFFFF;
+                font-size: 12px;
+                display: inline-block;
+                text-decoration: none;
+
+                &:hover { 
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
