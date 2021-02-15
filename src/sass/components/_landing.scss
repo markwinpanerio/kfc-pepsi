@@ -52,6 +52,12 @@
             display: block;
             margin: 0 auto;
 
+            .landing-no-scroll & {
+                @include max-screen(768px) {
+                    width: 20vh;
+                }
+            }
+
             @include min-screen(990px) {
                 width: 22vh;
             }
@@ -79,7 +85,7 @@
 
         .landing-no-scroll & {
             @include max-screen($breakpoint-mobile) {
-                font-size: 2.4vh;
+                font-size: 3vh;
             }
         }
     }
@@ -125,7 +131,7 @@
                 }
 
                 @include max-screen($mobile-max-width - 1) {
-                    margin-bottom: 10px;
+                    margin-bottom: 0.4vh;
                 }
             }
 
@@ -154,7 +160,7 @@
                 top: -3px;
 
                 @include max-screen($mobile-max-width - 1) {
-                    font-size: 14px;
+                    font-size: 1.8vh;
                     padding-left: 5px;
                     display: block;
                 }
@@ -187,6 +193,12 @@
         display: inline-block;
         margin-top: 10px;
 
+        .landing-no-scroll & {
+            @include max-screen(768px) {
+                font-size: 1.5vh;
+            }
+        }
+
         @include min-screen(990px) {
             font-size: 1.5vh;
         }
@@ -210,6 +222,12 @@
             width: 230px;
             filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.8));
 
+            .landing-no-scroll & {
+                @include max-screen(768px) {
+                    width: 25vh;
+                }
+            }
+
             @include min-screen(990px) {
                 width: 25vh;
             }
@@ -226,6 +244,12 @@
         display: block;
         text-decoration: none;
         margin-top: 10px;
+
+        .landing-no-scroll & {
+            @include max-screen(768px) {
+                font-size: 1.5vh;
+            }
+        }
 
         @include min-screen(990px) {
             font-size: 1.6vh;
