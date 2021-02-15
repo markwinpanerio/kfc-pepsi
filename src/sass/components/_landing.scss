@@ -52,10 +52,8 @@
             display: block;
             margin: 0 auto;
 
-            .landing-no-scroll & {
-                @include max-screen(768px) {
-                    width: 20vh;
-                }
+            @include max-screen(768px) {
+                width: 20vh;
             }
 
             @include min-screen(990px) {
@@ -266,6 +264,11 @@
         a {
             text-decoration: none;
             color: $color-white;
+            font-family: $font-montserrat;
+
+            @include max-screen(768px) {
+                font-size: 1.5vh;
+            }
         }
     }
 }

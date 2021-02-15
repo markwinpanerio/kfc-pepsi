@@ -211,7 +211,7 @@
                 border-radius: 10px;
                 color: #000;
                 background-color: $color-white;
-                font-size: 18px;
+                font-size: 14px;
                 letter-spacing: 0.88px;
 
                 @include min-screen(990px) {
@@ -238,6 +238,11 @@
                     max-width: 235px;
                     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .8));
 
+                    @include max-screen(768px) {
+                        width: 25vh;
+                        max-width: 100%;
+                    }
+
                     @include min-screen(990px) {
                         max-width: 100%;
                         width: 22vh;
@@ -251,6 +256,11 @@
                 font-size: 12px;
                 display: inline-block;
                 text-decoration: none;
+                font-family: $font-montserrat;
+
+                @include max-screen(768px) {
+                    font-size: 1.5vh;
+                }
 
                 &:hover { 
                     text-decoration: none;
