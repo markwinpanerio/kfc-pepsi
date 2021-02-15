@@ -35,6 +35,11 @@
             max-width: 466px;
             display: block;
             margin: 0 auto;
+
+            @include min-screen(990px) {
+                max-width: 100%;
+                width: 40vh;
+            }
         }
     }
 }

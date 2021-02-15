@@ -33,6 +33,11 @@
         @include min-screen($breakpoint-mobile) {
             background-size: cover;
         }
+
+        @include min-screen(990px) {
+            padding-top: 3vh;
+            padding-bottom: 3vh;
+        }
     }
 
     &-logo {
@@ -40,6 +45,10 @@
             width: 178px;
             display: block;
             margin: 0 auto;
+
+            @include min-screen(990px) {
+                width: 22vh;
+            }
         }
     }
 
@@ -47,10 +56,15 @@
         color: $color-white;
         text-align: center;
         font-size: 24px; 
+        margin-top: 20px;
         line-height: 1.4;
         letter-spacing: 1.18px;
-        margin-top: 20px;
         text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+
+        @include min-screen(990px) {
+            font-size: 2.5vh;
+            margin-top: 1.5vh;
+        }
 
         @include max-screen($mobile-max-width - 1) {
             font-size: 20px;
@@ -102,6 +116,10 @@
                 @include max-screen($mobile-max-width - 1) {
                     width: 40px;
                 }
+
+                @include min-screen(990px) {
+                    width: 6vh;
+                }
             }
 
             span {
@@ -120,6 +138,10 @@
                     font-size: 14px;
                     padding-left: 5px;
                     display: block;
+                }
+
+                @include min-screen(990px) {
+                    font-size: 1.6vh;
                 }
 
                 i {
@@ -141,10 +163,14 @@
         font-family: $font-montserrat;
         color: $color-white;
         font-size: 12px;
-        line-height: 24px;
+        line-height: 1.2;
         letter-spacing: 0.59px;
         display: inline-block;
         margin-top: 10px;
+
+        @include min-screen(990px) {
+            font-size: 1.5vh;
+        }
     }
 
     &-button {
@@ -153,6 +179,10 @@
         text-align: center;
         margin: 15px 0 0;
 
+        @include min-screen(990px) {
+            margin: 1.5vh ​0 0;
+        }
+
         a {
             display: inline-block;
         }
@@ -160,6 +190,10 @@
         img {
             width: 230px;
             filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.8));
+
+            @include min-screen(990px) {
+                width: 25vh;
+            }
         }
     }
 
@@ -173,6 +207,10 @@
         display: block;
         text-decoration: none;
         margin-top: 10px;
+
+        @include min-screen(990px) {
+            font-size: 1.6vh;
+        }
     }
 
     &-terms-container {

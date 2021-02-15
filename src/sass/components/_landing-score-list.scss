@@ -27,6 +27,10 @@
         color: #01EEFF;
         text-shadow: 0px 5px 10px rgba(0,0,0, 0.8);
         text-align: center;
+
+        @include min-screen(990px) {
+            font-size: 6.5vh;
+        }
         
         span {
             background: {
@@ -36,6 +40,10 @@
             }
             display: inline-block;
             padding: 23px 90px 0px;
+
+            @include min-screen(990px) {
+                padding: 3vh 11vh 0;
+            }
         }
     }
 
@@ -43,12 +51,18 @@
         background: {
             image: url('../images/text-image/text-highscore-border.png');
             position: top;
-            size: cover;
+            size: 100% 100%;
         }
         margin-top: 20px;
-        padding: 80px 50px 12px;
+        padding: 80px 50px 55px;
         min-height: 380px;
         position: relative;
+
+        @include min-screen(990px) {
+            margin-top: 0.5vh;
+            min-height: auto;
+            padding: calc(4vh  + 34px) calc(5vh + 10px) 6vh;
+        }
         
         &:before {
             content: "";
@@ -63,6 +77,10 @@
                 image: url('../images/text-image/text-highscore-text.png');
                 position: top;
                 size: cover;
+            }
+
+            @include min-screen(990px) {
+                top: 2vh;
             }
         }
 
@@ -87,6 +105,10 @@
 
         &:not(:last-child) {
             margin-bottom: 10px;
+
+            @include min-screen(990px) {
+                margin-bottom: 0.9vh;
+            }
         }
 
         > span {
@@ -96,6 +118,11 @@
             border-radius: 50%;
             overflow: hidden;
             box-shadow: 0px 5px 10px rgba(0,0,0, 0.8);
+
+            @include min-screen(990px) {
+                width: 3vh;
+                height: 3vh;
+            }
             
             img {
                 width: 100%;
@@ -110,12 +137,15 @@
             padding-left: 10px;
             text-shadow: 0px 5px 10px #000000CC;
             text-transform: uppercase;
-            font-family: 21px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             letter-spacing: 1.03px;
             line-height: 1.3;
+
+            @include min-screen(990px) {
+                font-size: 1.6vh;
+            }
         }
     }
 
@@ -130,8 +160,22 @@
             line-height: 1.3;
 
             @include min-screen(990px) {
-                font-size: 20px;
-                margin-top: 10px;
+                font-size: 2vh;
+                margin-top: 1.2vh;
+            }
+
+            @include max-screen(768px) {
+                font-size: 18px;
+            }
+
+            br {
+                @include max-screen-height(765px) {
+                    display: none;
+                }
+
+                @include max-screen(768px) {
+                    display: block;
+                }
             }
         }
 
@@ -140,12 +184,20 @@
             margin: 15px auto 0;
             text-align: center;
 
+            @include min-screen(990px) {
+                margin: 1vh auto 0;
+            }
+
             ul {
                 text-align: left;
 
                 li {
                     &:not(:last-child) {
                         margin-bottom: 10px;
+
+                        @include min-screen(990px) {
+                            margin-bottom: 0.9vh;
+                        }
                     }
                 }
             }
@@ -153,12 +205,18 @@
             label {
                 display: flex;
                 flex-wrap: wrap;
+                align-items: center;
                 padding: 10px 15px;
                 border-radius: 10px;
                 color: #000;
                 background-color: $color-white;
                 font-size: 18px;
                 letter-spacing: 0.88px;
+
+                @include min-screen(990px) {
+                    padding: 0.8vh 1.5vh;
+                    font-size: 1.8vh;
+                }
             }
 
             input,
@@ -178,6 +236,11 @@
                 img {
                     max-width: 235px;
                     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .8));
+
+                    @include min-screen(990px) {
+                        max-width: 100%;
+                        width: 22vh;
+                    }
                 }
             }
 
