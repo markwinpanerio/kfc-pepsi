@@ -30,6 +30,12 @@
             size: 107% 107%;
         }
 
+        @include max-screen($breakpoint-mobile) {
+            height: 100vh;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+        }
+
         @include min-screen($breakpoint-mobile) {
             background-size: cover;
         }
@@ -70,6 +76,12 @@
             font-size: 20px;
             margin-top: 10px;
         }
+
+        .landing-no-scroll & {
+            @include max-screen($breakpoint-mobile) {
+                font-size: 2.4vh;
+            }
+        }
     }
 
     &-score {
@@ -90,6 +102,13 @@
 
             @include min-screen(990px) {
                 width: 25vh;
+            }
+
+            //modifier
+            .landing-no-scroll & {
+                @include max-screen(768px) {
+                    width: 22.9vh;
+                }
             }
         }
     }
