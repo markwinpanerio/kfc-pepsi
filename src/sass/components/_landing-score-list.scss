@@ -10,6 +10,7 @@
 
         @include max-screen(414px) {
             padding-top: 15px;
+            height: auto;
         }
 
         @include min-screen(990px) {
