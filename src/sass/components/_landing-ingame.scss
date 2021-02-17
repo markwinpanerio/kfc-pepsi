@@ -8,13 +8,9 @@
     .landing-inner {
         padding-top: 25px;
         padding-bottom: 25px;
-        background: {
-            image: url('../images/background/mobile-bg-game.jpg');
-            position: center;
-            size: cover;
-        }
         min-height: 100vh;
         position: relative;
+        background: none;
 
         @include min-screen(990px) {
             min-height: calc(100vh - 50px);
@@ -28,6 +24,19 @@
             background-position: top;
             padding-top: 36px;
         }
+    }
+
+    &-background {
+        background: {
+            image: url('../images/background/mobile-bg-game.jpg');
+            position: top;
+            size: cover;
+        }
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 65px);
     }
 
     &-header {
